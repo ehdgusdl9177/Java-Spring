@@ -57,3 +57,71 @@ for(int i = 0; i < dArr.length; i++) {
 }
 System.out.println(mtotal);
 ```
+
+- 요소의 개수에 대한 변수(count)를 따로 유지
+```Java
+double[] dArr = new double[5];
+int count = 0;
+dArr[0] = 1.1; count++;
+dArr[1] = 2.1; count++;
+dArr[2] = 3.1; count++;
+
+double mtotal = 1;
+for(int i = 0; i < count; i++) {
+  mtotal *= dArr[i];
+}
+
+System.out.println(mtotal);
+```
+
+## 문자 배열을 만들어 A-Z 까지 배열에 저장하고 이를 다시 출력
+```Java
+public class CharArrayTest {
+
+	public static void main(String[] args) {
+
+		char[] alpahbets = new char[26];
+		char ch = 'A';
+		
+		for(int i = 0; i<alpahbets.length; i++) {
+			
+			alpahbets[i] = ch++;
+		}
+		
+		for(int i = 0; i<alpahbets.length; i++) {
+			System.out.println(alpahbets[i] +","+ (int)alpahbets[i]);
+		}
+	}
+
+}
+```
+
+## 향상된 for 문 사용
+- 배열의 n개 요소를 0부터 n-1까지 순차적으로 순회할 때 간단하게 사용할 수 있음
+```Java
+for(변수 : 배열) {
+
+}
+```
+
+```Java
+public class CharArrayTest {
+
+	public static void main(String[] args) {
+
+		char[] alpahbets = new char[26];
+		char ch = 'A';
+		
+		for(int i = 0; i<alpahbets.length; i++) {
+			
+			alpahbets[i] = ch++;
+		}
+		
+		for(char alpha : alpahbets) {
+			System.out.println(alpha +","+ (int)alpha);
+		}
+
+	}
+
+}
+```
